@@ -38,7 +38,8 @@ public class FormularioListarProdutos extends JFrame {
 	 * Create the frame.
 	 */
 	public FormularioListarProdutos() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Lucas Francisco\\Desktop\\Java - Fundamentos\\01 - Conceitos OO\\TrabalhoAvaliativo\\src\\Imagens\\if_crazy-weather_1291752.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(
+				"C:\\Users\\Lucas Francisco\\Desktop\\Java - Fundamentos\\01 - Conceitos OO\\TrabalhoAvaliativo\\src\\Imagens\\if_crazy-weather_1291752.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -59,12 +60,12 @@ public class FormularioListarProdutos extends JFrame {
 		btnExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
+				int linha = tabela.getSelectedRow();
+				a.excluir(linha);
 				DefaultTableModel dtm = (DefaultTableModel) tabela.getModel();
 				if (tabela.getSelectedRow() >= 0) {
 					dtm.removeRow(tabela.getSelectedRow());
 					tabela.setModel(dtm);
-					int linha = tabela.getSelectedRow();
-					a.excluir(linha);
 				} else {
 					JOptionPane.showMessageDialog(null, "Favor selecionar um produto na tabela.");
 				}
