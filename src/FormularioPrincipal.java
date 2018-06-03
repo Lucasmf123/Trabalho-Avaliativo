@@ -123,7 +123,7 @@ public class FormularioPrincipal extends JFrame {
 
 				} else {
 					JOptionPane.showMessageDialog(null,
-							"Erro!\n\n*Definição do Erro: Você não é um ADM.\nApenas Administradores tem acesso a este recurso.*",
+							"Erro!\n\n*Definição do Erro: Apenas Adm pré-definido pelo desenvolvedor tem acesso a este recurso.*",
 							"Erro de Entrada", JOptionPane.ERROR_MESSAGE);
 
 					// Limpar campos

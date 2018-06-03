@@ -59,12 +59,13 @@ public class FormularioListarClientes extends JFrame {
 		btnExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
+				int linha = tabela.getSelectedRow();
+				a.excluir(linha);
+				
 				DefaultTableModel dtm = (DefaultTableModel) tabela.getModel();
 				if (tabela.getSelectedRow() >= 0) {
 					dtm.removeRow(tabela.getSelectedRow());
 					tabela.setModel(dtm);
-					int linha = tabela.getSelectedRow();
-					a.excluir(linha);
 				} else {
 					JOptionPane.showMessageDialog(null, "Favor selecionar um cliente na tabela.");
 				}
